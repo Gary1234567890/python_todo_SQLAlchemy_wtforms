@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDos</title>
+</head>
+<body>
+<h1>My Library</h1>
+    {% if todos == []: %}
+    <p>To Do list is empty.</p>
+    {% endif %}
+    <H3>Title - Description - Due Date - Done</H3>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {{todo.title}} - {{todo.description}} - {{todo.due_date}} - {{todo.done}}
+            <a href="{{ url_for('edit', id=todo.id) }}">Edit To Do</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+<a href="{{url_for('add')}}">Add ToDo</a>
+</body>
+</html>

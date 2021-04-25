@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Todo</title>
+</head>
+<body>
+     <form action="{{ url_for('edit') }}" method="POST">
+        <p>Todo Name: {{todo.title}}</p>
+        <p>Current Done status {{todo.done}}</p>
+         <input hidden="hidden" name="id" value="{{todo.id}}">
+        <input name="done" type="checkbox" placeholder="Done">
+        <button type="submit">Change if Todo is done</button>
+    </form>
+</body>
+</html>
